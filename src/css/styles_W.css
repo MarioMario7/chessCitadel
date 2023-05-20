@@ -1,0 +1,254 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("../images/869887.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    height: 100%;
+}
+
+.row{
+    display: flex;
+}
+
+#board{
+    margin-bottom: 25px;
+    margin-top: -20px;
+}
+
+.square{
+    width: 70px;
+    height: 70px;
+    background-color: rgb(227, 227, 199);
+}
+
+.beige{
+    background-color: rgb(227, 227, 199);
+}
+
+.brown{
+    background-color: rgb(91, 90, 90);
+}
+
+#info{
+    height: 30px;
+    color: #ffffff;
+    font-size: 25px;
+}
+
+.chess-piece{
+    height:70px;
+    width:70px;
+}
+
+.highlight {
+    background-color: rgb(150, 133, 227);
+}
+
+
+.draggable {
+    cursor: move;
+}
+
+
+.dragging {
+    cursor: grabbing;
+}
+
+
+.draggable:hover {
+    cursor: grab;
+}
+
+.hover{
+    cursor: grabbing;
+}
+
+.circle{
+    border-radius: 50%;
+    background-color: rgba(25, 60, 105, 0.5);
+}
+
+.no-circle{
+    display: none;
+}
+
+.pop-up-w{
+    width: 400px;
+    height: 150px;
+    background: rgba(166, 17, 46, 0.88);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0.1);
+    align-items: center;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 40px;
+    color: #F5EE8D;
+    visibility: hidden;
+    transition: transform 0.4s, center 0.4s;
+    border-radius: 20px;
+}
+
+.open-pop-up-w{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(1);
+}
+
+.pop-up-w img{
+    width: 60px;
+    margin: 7px;
+    margin-bottom: -10px;
+}
+
+.pop-up-w .btn{
+    color: #000000;
+    border: 15px;
+    background: #F5EE8D;
+    display: inline-block;
+    margin: 10px;
+}
+
+
+.pop-up-b{
+    width: 400px;
+    height: 150px;
+    background: rgba(166, 17, 46, 0.88);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0.1);
+    align-items: center;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 40px;
+    color: #F5EE8D;
+    visibility: hidden;
+    transition: transform 0.4s, center 0.4s;
+    border-radius: 20px;
+}
+
+.open-pop-up-b{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(1);
+}
+
+.pop-up-b img{
+    width: 60px;
+    margin: 7px;
+    margin-bottom: -10px;
+}
+
+.pop-up-b .btn{
+    color: #000000;
+    border: 15px;
+    background: #F5EE8D;
+    display: inline-block;
+    margin: 10px;
+}
+
+.pop-up-win-w{
+    width: 400px;
+    height: 150px;
+    background: rgba(166, 17, 46, 0.88);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0.1);
+    align-items: center;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 40px;
+    color: #F5EE8D;
+    visibility: hidden;
+    transition: transform 0.4s, center 0.4s;
+    border-radius: 20px;
+}
+
+.pop-up-win-b{
+    width: 400px;
+    height: 150px;
+    background: rgba(166, 17, 46, 0.88);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0.1);
+    align-items: center;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 40px;
+    color: #F5EE8D;
+    visibility: hidden;
+    transition: transform 0.4s, center 0.4s;
+    border-radius: 20px;
+}
+
+.pop-up-win-b .btn-back
+{
+    color: #000000;
+    border: 15px;
+    background: #F5EE8D;
+    display: inline-block;
+    margin: 10px;
+    width: 80%;
+    height: 40px;
+    border-radius: 50px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.pop-up-win-b a
+{
+    text-decoration: none;
+    color: black;
+}
+
+.pop-up-win-w .btn-back
+{
+    color: #000000;
+    border: 15px;
+    background: #F5EE8D;
+    display: inline-block;
+    margin: 10px;
+    width: 80%;
+    height: 40px;
+    border-radius: 50px;
+    font-size: 20px;
+}
+
+.pop-up-win-w a
+{
+    text-decoration: none;
+    color: black;
+}
+
+.pop-up-win-w .btn-back:hover
+{
+    background: #e8df6f;
+    cursor: pointer;
+}
+
+.pop-up-win-b .btn-back:hover
+{
+    background: #e8df6f;
+    cursor: pointer;
+}
+
+
+.open-pop-up-win-w{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(1);
+}
+
+.open-pop-up-win-b{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(1);
+}

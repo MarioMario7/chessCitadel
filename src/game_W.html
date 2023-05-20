@@ -1,0 +1,358 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Battlefield</title>
+    <link rel="stylesheet" href="css/styles_W.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <style>
+        #video-container-2 {
+            position: absolute;
+            left: 0;
+            top: 5%;
+            width: 400px;
+            height: 240px;
+            border-radius: 20px;
+        }
+        #video-1 {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+        }
+
+        #video-container-1 {
+            position: absolute;
+            right: 0;
+            bottom: 5%;
+            width: 400px;
+            height: 240px;
+            border-radius: 20px;
+        }
+        #video-2 {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+<p id="info">It is White's turn</p>
+<div id="board">
+    <div class="row">
+        <div class="square beige" id="18">
+            <div class="point" id="180"></div>
+            <img src="images/blackRook.png" alt="Black Rook" class="chess-piece" draggable="true" id="Queen's Black Rook">
+        </div>
+        <div class="square brown" id="28">
+            <div class="point" id="280"></div>
+            <img src="images/blackKnight.png" alt="Black Knight" class="chess-piece" draggable="true" id="Queen's Black Knight">
+        </div>
+        <div class="square beige" id="38">
+            <div class="point" id="380"></div>
+            <img src="images/blackBishop.png" alt="Black Bishop" class="chess-piece" draggable="true" id="Queen's Black Bishop">
+        </div>
+        <div class="square brown" id="48" >
+            <div class="point" id="480"></div>
+            <img src="images/blackQueen.png" alt="Black Queen" class="chess-piece" draggable="true" id="Black Queen">
+        </div>
+        <div class="square beige" id="58">
+            <div class="point" id="580"></div>
+            <img src="images/blackKing.png" alt="Black King" class="chess-piece" draggable="true" id="Black King">
+        </div>
+        <div class="square brown" id="68">
+            <div class="point" id="680"></div>
+            <img src="images/blackBishop.png" alt="Black Bishop" class="chess-piece" draggable="true" id="King's Black Bishop">
+        </div>
+        <div class="square beige" id="78">
+            <div class="point" id="780"></div>
+            <img src="images/blackKnight.png" alt="Black Knight" class="chess-piece" draggable="true" id="King's Black Knight">
+        </div>
+        <div class="square brown" id="88">
+            <div class="point" id="880"></div>
+            <img src="images/blackRook.png" alt="Black Rook" class="chess-piece" draggable="true" id="King's Black Rook">
+        </div>
+    </div>
+    <div class="row">
+        <div class="square brown" id="17">
+            <div class="point" id="170"></div>
+            <img src="images/blackPawn.png" alt="Black Pawn" class="chess-piece" draggable="true" id="Black A Pawn">
+        </div>
+        <div class="square beige" id="27">
+            <div class="point" id="270"></div>
+            <img src="images/blackPawn.png" alt="Black Pawn" class="chess-piece" draggable="true" id="Black B Pawn">
+        </div>
+        <div class="square brown" id="37">
+            <div class="point" id="370"></div>
+            <img src="images/blackPawn.png" alt="Black Pawn" class="chess-piece" draggable="true" id="Black C Pawn">
+        </div>
+        <div class="square beige" id="47">
+            <div class="point" id="470"></div>
+            <img src="images/blackPawn.png" alt="Black Pawn" class="chess-piece" draggable="true" id="Black D Pawn">
+        </div>
+        <div class="square brown" id="57">
+            <div class="point" id="570"></div>
+            <img src="images/blackPawn.png" alt="Black Pawn" class="chess-piece" draggable="true" id="Black E Pawn">
+        </div>
+        <div class="square beige" id="67">
+            <div class="point" id="670"></div>
+            <img src="images/blackPawn.png" alt="Black Pawn" class="chess-piece" draggable="true" id="Black F Pawn">
+        </div>
+        <div class="square brown" id="77">
+            <div class="point" id="770"></div>
+            <img src="images/blackPawn.png" alt="Black Pawn" class="chess-piece" draggable="true" id="Black G Pawn">
+        </div>
+        <div class="square beige" id="87">
+            <div class="point" id="870"></div>
+            <img src="images/blackPawn.png" alt="Black Pawn" class="chess-piece" draggable="true" id="Black H Pawn">
+        </div>
+    </div>
+    <div class="row">
+        <div class="square beige" id="16"><div class="point" id="160"></div></div>
+        <div class="square brown" id="26"><div class="point" id="260"></div></div>
+        <div class="square beige" id="36"><div class="point" id="360"></div></div>
+        <div class="square brown" id="46"><div class="point" id="460"></div></div>
+        <div class="square beige" id="56"><div class="point" id="560"></div></div>
+        <div class="square brown" id="66"><div class="point" id="660"></div></div>
+        <div class="square beige" id="76"><div class="point" id="760"></div></div>
+        <div class="square brown" id="86"><div class="point" id="860"></div></div>
+    </div>
+    <div class="row">
+        <div class="square brown" id="15"><div class="point" id="150"></div></div>
+        <div class="square beige" id="25"><div class="point" id="250"></div></div>
+        <div class="square brown" id="35"><div class="point" id="350"></div></div>
+        <div class="square beige" id="45"><div class="point" id="450"></div></div>
+        <div class="square brown" id="55"><div class="point" id="550"></div></div>
+        <div class="square beige" id="65"><div class="point" id="650"></div></div>
+        <div class="square brown" id="75"><div class="point" id="750"></div></div>
+        <div class="square beige" id="85"><div class="point" id="850"></div></div>
+    </div>
+    <div class="row">
+        <div class="square beige" id="14"><div class="point" id="140"></div></div>
+        <div class="square brown" id="24"><div class="point" id="240"></div></div>
+        <div class="square beige" id="34"><div class="point" id="340"></div></div>
+        <div class="square brown" id="44"><div class="point" id="440"></div></div>
+        <div class="square beige" id="54"><div class="point" id="540"></div></div>
+        <div class="square brown" id="64"><div class="point" id="640"></div></div>
+        <div class="square beige" id="74"><div class="point" id="740"></div></div>
+        <div class="square brown" id="84"><div class="point" id="840"></div></div>
+    </div>
+    <div class="row">
+        <div class="square brown" id="13"><div class="point" id="130"></div></div>
+        <div class="square beige" id="23"><div class="point" id="230"></div></div>
+        <div class="square brown" id="33"><div class="point" id="330"></div></div>
+        <div class="square beige" id="43"><div class="point" id="430"></div></div>
+        <div class="square brown" id="53"><div class="point" id="530"></div></div>
+        <div class="square beige" id="63"><div class="point" id="630"></div></div>
+        <div class="square brown" id="73"><div class="point" id="730"></div></div>
+        <div class="square beige" id="83"><div class="point" id="830"></div></div>
+    </div>
+    <div class="row">
+        <div class="square beige" id="12">
+            <div class="point" id="120"></div>
+            <img src="images/whitePawn.png" alt="White Pawn" class="chess-piece" draggable="true" id="White A Pawn">
+        </div>
+        <div class="square brown" id="22">
+            <div class="point" id="220"></div>
+            <img src="images/whitePawn.png" alt="White Pawn" class="chess-piece" draggable="true" id="White B Pawn">
+        </div>
+        <div class="square beige" id="32">
+            <div class="point" id="320"></div>
+            <img src="images/whitePawn.png" alt="White Pawn" class="chess-piece" draggable="true" id="White C Pawn">
+        </div>
+        <div class="square brown" id="42">
+            <div class="point" id="420"></div>
+            <img src="images/whitePawn.png" alt="White Pawn" class="chess-piece" draggable="true" id="White D Pawn">
+        </div>
+        <div class="square beige" id="52">
+            <div class="point" id="520"></div>
+            <img src="images/whitePawn.png" alt="White Pawn" class="chess-piece" draggable="true" id="White E Pawn">
+        </div>
+        <div class="square brown" id="62">
+            <div class="point" id="620"></div>
+            <img src="images/whitePawn.png" alt="White Pawn" class="chess-piece" draggable="true" id="White F Pawn">
+        </div>
+        <div class="square beige" id="72">
+            <div class="point" id="720"></div>
+            <img src="images/whitePawn.png" alt="White Pawn" class="chess-piece" draggable="true" id="White G Pawn">
+        </div>
+        <div class="square brown" id="82">
+            <div class="point" id="820"></div>
+            <img src="images/whitePawn.png" alt="White Pawn" class="chess-piece" draggable="true" id="White H Pawn">
+        </div>
+    </div>
+    <div class="row">
+        <div class="square brown" id="11">
+            <div class="point" id="110" draggable="false"></div>
+            <img src="images/whiteRook.png" alt="White Rook" class="chess-piece" draggable="true" id="Queen's White Rook">
+        </div>
+        <div class="square beige" id="21">
+            <div class="point" id="210" draggable="false"></div>
+            <img src="images/whiteKnight.png" alt="White Knight" class="chess-piece" draggable="true" id="Queen's White Knight">
+        </div>
+        <div class="square brown" id="31">
+            <div class="point" id="310" draggable="false"></div>
+            <img src="images/whiteBishop.png" alt="White Bishop" class="chess-piece" draggable="true" id="Queen's White Bishop">
+        </div>
+        <div class="square beige" id="41">
+            <div class="point" id="410" draggable="false"></div>
+            <img src="images/whiteQueen.png" alt="White Queen" class="chess-piece" draggable="true" id="White Queen">
+        </div>
+        <div class="square brown" id="51">
+            <div class="point" id="510" draggable="false"></div>
+            <img src="images/whiteKing.png" alt="White King" class="chess-piece" draggable="true" id="White King">
+        </div>
+        <div class="square beige" id="61">
+            <div class="point" id="610" draggable="false"></div>
+            <img src="images/whiteBishop.png" alt="White Bishop" class="chess-piece" draggable="true" id="King's White Bishop">
+        </div>
+        <div class="square brown" id="71">
+            <div class="point" id="710" draggable="false"></div>
+            <img src="images/whiteKnight.png" alt="White Knight" class="chess-piece" draggable="true" id="King's White Knight">
+        </div>
+        <div class="square beige" id="81">
+            <div class="point" id="810" draggable="false"></div>
+            <img src="images/whiteRook.png" alt="White Rook" class="chess-piece" draggable="true" id="King's White Rook">
+        </div>
+    </div>
+</div>
+
+
+
+<div class="pop-up-w" id="pop-up-w" onclick>
+    <p>
+    <img src="images/whiteQueen.png" alt="" id="swqueen">
+
+    <img src="images/whiteRook.png" alt="" id="swrook">
+
+    <img src="images/whiteBishop.png" alt="" id="swbishop">
+
+    <img src="images/whiteKnight.png" alt="" id="swknight">
+    </p>
+    <p>
+    <button type="button" class="btn" id="btn-wqueen">Queen</button>
+    <button type="button" class="btn" id="btn-wrook">Rook</button>
+    <button type="button" class="btn" id="btn-wbishop">Bishop</button>
+    <button type="button" class="btn" id="btn-wknight">Knight</button>
+    </p>
+    <h2>Choose Promotion Piece</h2>
+</div>
+
+<div class="pop-up-b" id="pop-up-b" onclick>
+    <p>
+        <img src="images/blackQueen.png" alt="" id="sbqueen">
+
+        <img src="images/blackRook.png" alt="" id="sbrook">
+
+        <img src="images/blackBishop.png" alt="" id="sbbishop">
+
+        <img src="images/blackKnight.png" alt="" id="sbknight">
+    </p>
+    <p>
+        <button type="button" class="btn" id="btn-bqueen">Queen</button>
+        <button type="button" class="btn" id="btn-brook">Rook</button>
+        <button type="button" class="btn" id="btn-bbishop">Bishop</button>
+        <button type="button" class="btn" id="btn-bknight">Knight</button>
+    </p>
+    <h2>Choose Promotion Piece</h2>
+</div>
+
+<div class="pop-up-win-w" id="pop-up-win-w" onclick>
+    <p>
+        <h1>White Wins!</h1>
+    </p>
+    <p>
+        <a href="index.html"><button type="button" class="btn-back" id="btn-w">Return to Home</button></a>
+    </p>
+</div>
+
+<div class="pop-up-win-b" id="pop-up-win-b" onclick>
+    <p>
+    <h1>Black Wins!</h1>
+    </p>
+    <p>
+        <a href="index.html"><button type="button" class="btn-back" id="btn-b">Return to Home</button></a>
+    </p>
+</div>
+
+
+
+<script src="app.js"></script>
+<script>
+
+    const constraints_1 = { video: true };
+    navigator.mediaDevices.getUserMedia(constraints_1)
+        .then(stream => {
+            const video = document.getElementById("video-1");
+            video.srcObject = stream;
+        })
+        .catch(error => {
+            console.error(error);
+        });
+
+    navigator.permissions.query({ name: 'camera' })
+        .then(permission => {
+            if (permission.state === 'granted') {
+
+            } else {
+
+                navigator.mediaDevices.getUserMedia({ video: true })
+                    .then(stream => {
+                    })
+                    .catch(error => {
+                        console.error(error);
+                    });
+            }
+        })
+        .catch(error => {
+            console.error(error);
+        });
+
+    const constraints_2 = { video: true };
+    navigator.mediaDevices.getUserMedia(constraints_2)
+        .then(stream => {
+            const video = document.getElementById("video-2");
+            video.srcObject = stream;
+        })
+        .catch(error => {
+            console.error(error);
+        });
+
+    navigator.permissions.query({ name: 'camera' })
+        .then(permission => {
+            if (permission.state === 'granted') {
+
+            } else {
+
+                navigator.mediaDevices.getUserMedia({ video: true })
+                    .then(stream => {
+
+                    })
+                    .catch(error => {
+                        console.error(error);
+                    });
+            }
+        })
+        .catch(error => {
+            console.error(error);
+        });
+
+</script>
+
+<div id="video-container-1">
+
+    <video id="video-1" autoplay muted></video>
+
+</div>
+
+
+<div id="video-container-2">
+
+    <video id="video-2" autoplay muted></video>
+
+</div>
+
+</body>
+</html>
+
+

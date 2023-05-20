@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="css/index.css" />
+    <script type="module" src="index.js"></script>
+</head>
+<body>
+<div id="left">
+    <div id="left_header">
+        <img id="logo" src="images/logo.png" alt="logo">
+        <h1 id="site_name">Chess Citadel</h1>
+
+    </div>
+
+    <div class="profile">
+        <p>
+            <img id="profile_image" src="images/default_profilev0.2.jpg" alt="profile">
+
+            <a class="login" href="index.html">Username</a>
+
+
+        </p>
+    </div>
+
+    <div class="list_friends">
+        <h2>Friends</h2>
+        <ul>
+            <li><a href="profile0"></a>Friend 0</li>
+            <li><a href="profile1"></a>Friend 1</li>
+            <li><a href="profile2"></a>Friend 2</li>
+            <li><a href="profile3"></a>Friend 3</li>
+            <li><a href="profile4"></a>Friend 4</li>
+        </ul>
+    </div>
+</div>
+
+<div id="right">
+    <div class="right_content">
+
+        <a class="play_btn" id="a_play_btn" ><button id="button_play"><h1>PLAY!</h1></button></a>
+        <div>
+            <a href="CREDITS"></a>
+        </div>
+    </div>
+</div>
+
+
+<div class="pop-up-loading" id="pop-up-loading" onclick>
+    <p>
+    <h1>Loading Match</h1>
+    </p>
+    <p>
+        <img src="images/whitePawn.png" id="load-icon_W" class="rotate">
+        <img src="images/blackPawn.png" id="load-icon_B" class="rotate">
+    </p>
+</div>
+
+<script src="index_buttons.js"></script>
+
+
+</body>
+</html>
