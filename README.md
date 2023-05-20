@@ -1,6 +1,6 @@
 # chessCitadel
 
-Authors: Iacobescu Cristian Mario (Marioario7), Negrila Rares (NegrilaRares).
+Authors: Iacobescu Cristian Mario (MarioMario7), Negrila Rares (NegrilaRares).
 
 Chess Citadel is a web application of a chess app, using Javascript, CSS and HTML.
 
